@@ -37,10 +37,11 @@ module.exports = (app) =>{
 				return res.redirect('/')
 			for (let i = 0; i < files.length; i++)
 			{
-			console.log('I am the words' + words)
+				console.log('I am the words' + words)
 				let name = 'img/letter_images/' + files[i];
 				let docx = files[i].replace(/.jpg/gi, '')
 				docx = docx[0].toUpperCase() + docx.slice(1)
+				console.log((public_path + 'letter_docx/' + files[i].replace(/jpg/gi, 'docx')))
 				let process = spawnSync('python3',["./Lexical-analysis/find_in_doc.py",
 									(public_path + 'letter_docx/' + files[i].replace(/jpg/gi, 'docx')),
 									words])
@@ -75,7 +76,6 @@ module.exports = (app) =>{
 		console.log(req.body)
 		let public_path = __dirname + '/../public/img/'
 		console.log((public_path + 'letter_docx/' + req.body.url + '.docx'))
-		console.log(words)
 		spawnSync('rm' ,['newdoc.docx'])
 		var process = spawnSync('python3',["./Lexical-analysis/create_doc.py",
 							(public_path + 'letter_docx/' + req.body.url + '.docx'),
