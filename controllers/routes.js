@@ -78,9 +78,7 @@ module.exports = (app) =>{
 		var process = spawnSync('python3',["./Lexical-analysis/create_doc.py",
 							words,
 							(public_path + 'letter_docx/' + req.body.url + '.docx')])
-		var process = spawnSync('python3',["./Lexical-analysis/create_doc.py",
-							words,
-							(public_path + 'letter_docx/' + req.body.url + '.docx')])
+		spawnSync('open' ,['newdoc.docx'])
 		res.sendStatus(200)
 	});
 }

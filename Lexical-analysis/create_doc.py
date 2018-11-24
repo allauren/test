@@ -55,16 +55,7 @@ def check_words(file, words):
             else :
                 nparagraph.add_run(word[1] + ' ').bold = False
     newdoc.save('newdoc.docx')
-    api = cloudconvert.Api('FRSnKXy80mxJmk9P4hM2LoaCQ3fvIbUBTkwzqZvP6jwpnW8CTfSOyS9wFwqaB7b9')
-    process = api.convert({
-    "inputformat": "docx",
-    "outputformat": "jpg",
-    "input": "upload",
-    "file": open('./newdoc.docx', 'rb')
-    })
     sys.stdout.write(founds)
-    process.wait()
-    process.download()
 
 if __name__ == '__main__':
-        draw_plt(sys.argv[1])
+        check_words(sys.argv[1], sys.argv[2])
