@@ -8,7 +8,6 @@ from docx import Document
 from docx.text.run import Font, Run
 from docx.shared import RGBColor
 import copy
-import cloudconvert
 
 
 def findWholeWord(w):
