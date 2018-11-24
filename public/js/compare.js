@@ -4,7 +4,7 @@ function post_datas(){
 
 		xhttp.onreadystatechange = function() {
 			if (xhttp.readyState == 4 && xhttp.status == 200) {
-			document.location.href = '/compared';
+			document.location.href = '/';
 		}}
 	xhttp.open("POST", "/compare", true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");

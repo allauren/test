@@ -26,7 +26,6 @@ def tokenizer(line):
     return token
 
 def check_words(file, words):
-    founds = 0
     document = Document(file)
     newdoc = Document()
     print(words)
@@ -42,12 +41,12 @@ def check_words(file, words):
         nparagraph.paragraph_format.space_after = 0
         nparagraph.paragraph_format.space_before = paragraph.paragraph_format.space_before
         nparagraph.style.name = paragraph.style.name
+        print('je passe ici')
         for word in tsentence :
             found = 0
             for fword in twords :
                 if fword[0]== word[0]:
                     found = 1
-                    founds += 1
             if found :
                 font.color.rgb = RGBColor(0x3f, 0x2c, 0x36)
                 nparagraph.add_run(word[1] + ' ').bold = True
@@ -55,7 +54,6 @@ def check_words(file, words):
             else :
                 nparagraph.add_run(word[1] + ' ').bold = False
     newdoc.save('newdoc.docx')
-    sys.stdout.write(founds)
 
 if __name__ == '__main__':
         check_words(sys.argv[1], sys.argv[2])

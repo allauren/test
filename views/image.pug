@@ -8,18 +8,18 @@ head
 	script(src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js')
 	script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js')
 	script(src='https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.jquery.min.js')
-	link(href='https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.min.css' rel='stylesheet')
+	link(rel='stylesheet', href='css/selector.css', type='text/css')
 	body.text-center
 		include navbar.pug
 		.container.text-center
 			.py-5
-				h2 Do you see the point of this?
+				h2 Chose the words you want to apply :
 				p.lead
 				form(name='new')
 					.form-group
 					include selector.pug
 					button#load.btn.btn-primary.btn-lg.active(onclick='post_datas()' type='button' style='margin-top:10px') get words
 				img(src='img/figure.png')
-			a.btn.btn-primary.btn-lg.active(href='/pick') maybe you need a better point of view
+			a.btn.btn-primary.btn-lg.active(href='/pick') get the letters sorted by occurence
 
 script(type='text/javascript', src='js/script.js')
