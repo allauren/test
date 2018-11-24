@@ -75,9 +75,11 @@ module.exports = (app) =>{
 		console.log(req.body)
 		let public_path = __dirname + '/../public/img/'
 		console.log((public_path + 'letter_docx/' + req.body.url + '.docx'))
+		console.log(words)
+		spawnSync('rm' ,['newdoc.docx'])
 		var process = spawnSync('python3',["./Lexical-analysis/create_doc.py",
-							words,
-							(public_path + 'letter_docx/' + req.body.url + '.docx')])
+							(public_path + 'letter_docx/' + req.body.url + '.docx'),
+							words])
 		spawnSync('open' ,['newdoc.docx'])
 		res.sendStatus(200)
 	});
