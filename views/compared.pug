@@ -1,0 +1,15 @@
+doctype html
+head
+	title Image compare
+	link(rel='stylesheet', href='css/compare.css', type='text/css')
+	link#bootstrap-css(href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css' rel='stylesheet')
+	body.text-center
+		include navbar.pug
+		.container
+			h2 Let me show you the words
+			p you have here in bold the words you discovered in the state neighbourhood :
+			.row
+				.column
+					img(src='img/compare1.jpg' alt='Snow' style='width:100%')
+				.column
+					img(src='img/compare2.jpg' alt='Forest' style='width:100%')

@@ -1,0 +1,24 @@
+doctype html
+head
+	meta(charset='utf-8')
+	title Image Picker
+	link#bootstrap-css(href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css' rel='stylesheet')
+	link(rel='stylesheet', href='css/picker.css', type='text/css')
+	script(src='//code.jquery.com/jquery-1.11.1.min.js')
+	script(src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js')
+	body
+		include navbar.pug
+		#container.text-center
+			h1 Choose your letter
+			br
+			form(name='letter')
+				.item
+					label(for='docx') letters sorted by occurence :
+					select#docx.row.application
+						option(data-img-src=first[0].name value=first[0].docx) !{first[0].docx} letter: !{first[0].value} occurence
+						option(data-img-src=first[1].name value=first[1].docx) !{first[1].docx} letter: !{first[1].value} occurence
+						option(data-img-src=first[2].name value=first[2].docx) !{first[2].docx} letter: !{first[2].value} occurence
+						option(data-img-src=first[3].name value=first[3].docx) !{first[3].docx} letter: !{first[3].value} occurence
+					button#load.btn.btn-primary.btn-lg(type='button' style='margin-top:10px' data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> searching words") check your words
+script(type='text/javascript', src='js/picker.js')
+script(type='text/javascript', src='js/compare.js')
