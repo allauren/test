@@ -1,0 +1,5 @@
+pip install --upgrade gensim
+sudo pip install --upgrade sklearn
+sudo pip install python-docx
+sudo pip install nltk
+
