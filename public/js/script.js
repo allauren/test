@@ -8,14 +8,13 @@ $(".chosen-select").chosen().change(function(e, params){
 });
 
 function post_datas(){
-	/*
-	 * console.log(values.len)
+	
 	if (values.length < 5)
 	{
 		alert('please select at least 5 words')
 	}
 	else
-	{*/
+	{
 		alert('processing, please wait!')
 		let xhttp = new XMLHttpRequest();
 		xhttp.onreadystatechange = function() {
@@ -25,6 +24,6 @@ function post_datas(){
 		xhttp.open("POST", "/selected", true);
 		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 		xhttp.send("values="+values)
-	//}
+	}
 };
 
